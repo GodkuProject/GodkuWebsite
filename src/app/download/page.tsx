@@ -187,7 +187,7 @@ export default function DownloadPage() {
             >
               <div className="space-y-4">
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.14.0/Godku_Project_Full_Version_6.14.0.apk"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.15.0/Godku_Project_Full_Version_6.15.0.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -205,7 +205,7 @@ export default function DownloadPage() {
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.14.0/Godku_Project_Full_Version_Japan_6.14.0.apk"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.15.0/Godku_Project_Full_Version_Japan_6.15.0.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -223,7 +223,7 @@ export default function DownloadPage() {
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.14.0/Godku_Project_Essential_6.14.0.apk"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.15.0/Godku_Project_Essential_6.15.0.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -241,7 +241,7 @@ export default function DownloadPage() {
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.14.0/Godku_Project_Essential_Japan_6.14.0.apk"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.15.0/Godku_Project_Essential_Japan_6.15.0.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -278,7 +278,7 @@ export default function DownloadPage() {
             >
               <div className="space-y-4">
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.14.0/Godku_Project_Base_6.14.0.ipa"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.15.0/Godku_Project_Base_6.15.0.ipa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-blue/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -296,7 +296,7 @@ export default function DownloadPage() {
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.14.0/Godku_Project_Injection_6.14.0.ipa"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.15.0/Godku_Project_Injection_6.15.0.ipa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-blue/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -314,7 +314,7 @@ export default function DownloadPage() {
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.14.0/Godku_Project_Instant_Win_6.14.0.ipa"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.15.0/Godku_Project_Instant_Win_6.15.0.ipa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-blue/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -326,42 +326,6 @@ export default function DownloadPage() {
                     <div>
                       <h3 className="text-xl font-semibold text-white">iOS Instant Win IPA</h3>
                       <p className="text-white/60 text-sm">Base IPA features + Instant win mods</p>
-                    </div>
-                  </div>
-                  <span className="text-dbz-blue">Download</span>
-                </a>
-
-                <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.14.0/Godku_Project_Mod_Menu_6.14.0.ipa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card hover:border-dbz-blue/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-dbz-blue/20 to-transparent rounded-lg flex items-center justify-center mr-4">
-                      <DownloadIcon className="w-6 h-6 text-dbz-blue" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">iOS Mod Menu IPA</h3>
-                      <p className="text-white/60 text-sm">Base IPA features + Mod Menu</p>
-                    </div>
-                  </div>
-                  <span className="text-dbz-blue">Download</span>
-                </a>
-
-                <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.14.0/Godku_Project_Mod_Menu_6.14.0.deb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card hover:border-dbz-blue/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-dbz-blue/20 to-transparent rounded-lg flex items-center justify-center mr-4">
-                      <DownloadIcon className="w-6 h-6 text-dbz-blue" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">iOS Mod Menu DEB</h3>
-                      <p className="text-white/60 text-sm">Deb file for Mod Menu</p>
                     </div>
                   </div>
                   <span className="text-dbz-blue">Download</span>
