@@ -187,7 +187,7 @@ export default function DownloadPage() {
             >
               <div className="space-y-4">
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.17.0/Godku_Project_Full_Version_6.17.0.apk"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.19.0/Godku_Project_Full_Version_6.19.0.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -205,25 +205,7 @@ export default function DownloadPage() {
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.17.0/Godku_Project_Full_Version_Japan_6.17.0.apk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-dbz-orange/20 to-transparent rounded-lg flex items-center justify-center mr-4">
-                      <DownloadIcon className="w-6 h-6 text-dbz-orange" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">Japan Full Version</h3>
-                      <p className="text-white/60 text-sm">Full version optimized for Japanese region</p>
-                    </div>
-                  </div>
-                  <span className="text-dbz-orange">Download</span>
-                </a>
-
-                <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.17.0/Godku_Project_Essential_6.17.0.apk"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.19.0/Godku_Project_Essential_6.19.0.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -235,24 +217,6 @@ export default function DownloadPage() {
                     <div>
                       <h3 className="text-xl font-semibold text-white">Essential</h3>
                       <p className="text-white/60 text-sm">Lightweight version with core features</p>
-                    </div>
-                  </div>
-                  <span className="text-dbz-orange">Download</span>
-                </a>
-
-                <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.17.0/Godku_Project_Essential_Japan_6.17.0.apk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-dbz-orange/20 to-transparent rounded-lg flex items-center justify-center mr-4">
-                      <DownloadIcon className="w-6 h-6 text-dbz-orange" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">Japan Essential</h3>
-                      <p className="text-white/60 text-sm">Essential version for Japanese region</p>
                     </div>
                   </div>
                   <span className="text-dbz-orange">Download</span>
@@ -278,7 +242,7 @@ export default function DownloadPage() {
             >
               <div className="space-y-4">
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.17.0/Godku_Project_Base_6.17.0.ipa"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.19.0/Godku_Project_Base_6.19.0.ipa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-blue/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -296,7 +260,7 @@ export default function DownloadPage() {
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.17.0/Godku_Project_Injection_6.17.0.ipa"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.19.0/Godku_Project_Injection_6.19.0.ipa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-blue/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -314,7 +278,7 @@ export default function DownloadPage() {
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.17.0/Godku_Project_Instant_Win_6.17.0.ipa"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.19.0/Godku_Project_Instant_Win_6.19.0.ipa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-blue/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
