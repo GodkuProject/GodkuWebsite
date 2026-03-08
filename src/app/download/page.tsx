@@ -187,7 +187,7 @@ export default function DownloadPage() {
             >
               <div className="space-y-4">
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.19.0/Godku_Project_Full_Version_6.19.0.apk"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.19.1/Godku_Project_6.19.1.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -197,15 +197,15 @@ export default function DownloadPage() {
                       <DownloadIcon className="w-6 h-6 text-dbz-orange" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-white">Full Version</h3>
-                      <p className="text-white/60 text-sm">Complete mod with all features</p>
+                      <h3 className="text-xl font-semibold text-white">Classic</h3>
+                      <p className="text-white/60 text-sm">Original game version</p>
                     </div>
                   </div>
                   <span className="text-dbz-orange">Download</span>
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.19.0/Godku_Project_Essential_6.19.0.apk"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.19.1/Godku_Project_Clone_6.19.1.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -215,8 +215,8 @@ export default function DownloadPage() {
                       <DownloadIcon className="w-6 h-6 text-dbz-orange" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-white">Essential</h3>
-                      <p className="text-white/60 text-sm">Lightweight version with core features</p>
+                      <h3 className="text-xl font-semibold text-white">Clone</h3>
+                      <p className="text-white/60 text-sm">Godku package name version</p>
                     </div>
                   </div>
                   <span className="text-dbz-orange">Download</span>
