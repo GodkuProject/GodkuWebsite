@@ -187,7 +187,7 @@ export default function DownloadPage() {
             >
               <div className="space-y-4">
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.21.0/Godku_Project_Classic_6.21.0_Alpha5.apk "
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.22.0/Godku_Project_Classic_6.22.0_Alpha5.apk "
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -205,7 +205,7 @@ export default function DownloadPage() {
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.21.0/Godku_Project_Clone_6.21.0_Alpha5.apk"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.22.0/Godku_Project_Clone_6.22.0_Alpha5.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-orange/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -242,7 +242,7 @@ export default function DownloadPage() {
             >
               <div className="space-y-4">
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.21.0/Godku_Project_Base_6.21.0.ipa"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.22.0/Godku_Project_Base_6.22.0.ipa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-blue/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -260,7 +260,7 @@ export default function DownloadPage() {
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.21.0/Godku_Project_Injection_6.21.0.ipa"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.22.0/Godku_Project_Injection_6.22.0.ipa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-blue/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
@@ -278,7 +278,7 @@ export default function DownloadPage() {
                 </a>
 
                 <a
-                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.21.0/Godku_Project_Instant_Win_6.21.0.ipa"
+                  href="https://github.com/GodkuProject/GodkuWebsite/releases/download/6.22.0/Godku_Project_Instant_Win_6.22.0.ipa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card hover:border-dbz-blue/50 p-5 flex items-center justify-between transition-all duration-300 hover:-translate-y-1"
