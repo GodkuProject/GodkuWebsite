@@ -5,8 +5,47 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { ChevronLeft } from "lucide-react";
 
-export default function DocumentationPage() {
+const policySections = [
+  {
+    title: "Data Used",
+    content:
+      "Godku may process your Discord user ID, username, command messages, command attachments, and server membership or role information when you use the bot.",
+  },
+  {
+    title: "Why Data Is Used",
+    content:
+      "This data is used to run requested bot commands, process uploaded save files, verify access to Godku Project features, and log command usage for moderation and support.",
+  },
+  {
+    title: "Uploaded Files",
+    content:
+      "Uploaded files are processed only for the requested command. Do not send files to the bot if you do not want them processed.",
+  },
+  {
+    title: "Message Content",
+    content:
+      "Godku uses message content only to detect and run prefix commands, read command arguments, and process attachments sent with commands.",
+  },
+  {
+    title: "Storage",
+    content:
+      "Godku does not use message content or uploaded files to train machine learning or AI models.\n\nCommand usage logs may include your Discord user ID, username, and the command used. These logs are used for moderation, support, and abuse prevention.",
+  },
+  {
+    title: "Opt-Out",
+    content:
+      "You can avoid message content processing by not sending commands or attachments to the bot. You can also remove the bot from a server or leave servers where the bot is installed.",
+  },
+  {
+    title: "Contact",
+    content:
+      "For privacy questions, contact the Godku Project staff in the official Discord server.",
+  },
+];
+
+export default function GodkuPolicyPage() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -50,33 +89,42 @@ export default function DocumentationPage() {
               variants={fadeInUp}
             >
               <h1 className="text-3xl md:text-4xl font-bold gradient-heading mb-6">
-                Godku Policies
+                Godku Privacy Policy
               </h1>
               <p className="text-white/70 text-lg">
-                Choose a policy below to view details about Godku Project.
+                Godku processes only the information needed to provide its Discord bot features.
               </p>
             </motion.div>
 
             <motion.div
-              className="flex flex-wrap justify-center gap-8"
+              className="max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
               transition={{ duration: 0.5, delay: 0.15 }}
             >
-              <Link href="/documentation/godku-policy" className="download-card group relative cursor-pointer">
-                <div className="relative z-10 flex flex-col items-center">
-                  <Image
-                    src="/GodkuWebsite/images/discord-icon.png"
-                    alt="Discord"
-                    width={80}
-                    height={80}
-                    className="mb-6 transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <span className="text-2xl font-bold bg-gradient-to-r from-white to-dbz-yellow text-transparent bg-clip-text">
-                    Godku Policy
-                  </span>
+              <div className="glass p-6 md:p-8 mb-10">
+                <div className="space-y-8">
+                  {policySections.map((section) => (
+                    <section key={section.title}>
+                      <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white to-dbz-yellow bg-clip-text text-transparent">
+                        {section.title}
+                      </h2>
+                      {section.content.split("\n\n").map((paragraph) => (
+                        <p key={paragraph} className="text-white/70 leading-relaxed mb-3 last:mb-0">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </section>
+                  ))}
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-dbz-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+              </div>
+
+              <Link
+                href="/documentation"
+                className="flex items-center gap-2 text-white/80 hover:text-white mx-auto transition-colors w-fit"
+              >
+                <ChevronLeft size={18} />
+                <span>Go Back</span>
               </Link>
             </motion.div>
           </div>
