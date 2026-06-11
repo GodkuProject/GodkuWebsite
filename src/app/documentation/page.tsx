@@ -2,58 +2,54 @@
 
 import { Header } from "@/components/Header";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Download, BookText, ServerCrash, Info, ChevronLeft } from "lucide-react";
+
+const policySections = [
+  {
+    title: "Data Used",
+    content:
+      "Godku may process your Discord user ID, username, command messages, command attachments, and server membership or role information when you use the bot.",
+  },
+  {
+    title: "Why Data Is Used",
+    content:
+      "This data is used to run requested bot commands, process uploaded save files, verify access to Godku Project features, and log command usage for moderation and support.",
+  },
+  {
+    title: "Uploaded Files",
+    content:
+      "Uploaded files are processed only for the requested command. Do not send files to the bot if you do not want them processed.",
+  },
+  {
+    title: "Message Content",
+    content:
+      "Godku uses message content only to detect and run prefix commands, read command arguments, and process attachments sent with commands.",
+  },
+  {
+    title: "Storage",
+    content:
+      "Godku does not use message content or uploaded files to train machine learning or AI models.\n\nCommand usage logs may include your Discord user ID, username, and the command used. These logs are used for moderation, support, and abuse prevention.",
+  },
+  {
+    title: "Opt-Out",
+    content:
+      "You can avoid message content processing by not sending commands or attachments to the bot. You can also remove the bot from a server or leave servers where the bot is installed.",
+  },
+  {
+    title: "Contact",
+    content:
+      "For privacy questions, contact the Godku Project staff in the official Discord server.",
+  },
+];
 
 export default function DocumentationPage() {
-  const [showAndroidDocs, setShowAndroidDocs] = useState(false);
-  const [showIosDocs, setShowIosDocs] = useState(false);
-  const [showBotDocs, setShowBotDocs] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-
-  const handleAndroidClick = () => {
-    setShowAndroidDocs(true);
-    setShowIosDocs(false);
-    setShowBotDocs(false);
-  };
-
-  const handleIosClick = () => {
-    setShowIosDocs(true);
-    setShowAndroidDocs(false);
-    setShowBotDocs(false);
-  };
-
-  const handleBotClick = () => {
-    setShowBotDocs(true);
-    setShowAndroidDocs(false);
-    setShowIosDocs(false);
-  };
-
-  const goBack = () => {
-    setShowAndroidDocs(false);
-    setShowIosDocs(false);
-    setShowBotDocs(false);
-  };
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -62,9 +58,9 @@ export default function DocumentationPage() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -72,7 +68,6 @@ export default function DocumentationPage() {
       <Header />
 
       <main className="pt-20 relative">
-        {/* Grid Pattern Background */}
         <div className="grid-pattern absolute inset-0 w-full h-full pointer-events-none" />
 
         <section className="relative py-24 overflow-hidden">
@@ -87,335 +82,53 @@ export default function DocumentationPage() {
             </motion.div>
 
             <motion.div
-              className="text-center mb-16 max-w-3xl mx-auto"
+              className="text-center mb-12 max-w-3xl mx-auto"
               initial="hidden"
               animate={isLoaded ? "visible" : "hidden"}
               variants={fadeInUp}
             >
-              <h1 className={`text-3xl md:text-4xl font-bold gradient-heading mb-6 ${showAndroidDocs || showIosDocs || showBotDocs ? 'hidden' : ''}`}>
-                Documentation & FAQ
+              <a
+                href="https://www.discord.gg/godkuproject"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 bg-dbz-blue/20 hover:bg-dbz-blue/30 transition-all duration-300 px-5 py-3 rounded-lg border border-white/10 hover:border-white/20 mb-8"
+              >
+                <Image src="/GodkuWebsite/images/discord-icon.png" alt="Discord" width={24} height={24} />
+                <span className="text-white font-semibold">Godku Policy</span>
+              </a>
+
+              <h1 className="text-3xl md:text-4xl font-bold gradient-heading mb-6">
+                Godku Privacy Policy
               </h1>
-              <p className={`text-white/70 text-lg mb-8 ${showAndroidDocs || showIosDocs || showBotDocs ? 'hidden' : ''}`}>
-                Choose a category below to view documentation about the Godku Project mod.
+              <p className="text-white/70 text-lg">
+                Godku processes only the information needed to provide its Discord bot features.
               </p>
             </motion.div>
 
-            <motion.h1
-              className={`text-3xl md:text-4xl font-bold gradient-heading mb-6 text-center ${!showAndroidDocs ? 'hidden' : ''}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: showAndroidDocs ? 1 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              Android Documentation
-            </motion.h1>
-
-            <motion.h1
-              className={`text-3xl md:text-4xl font-bold gradient-heading mb-6 text-center ${!showIosDocs ? 'hidden' : ''}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: showIosDocs ? 1 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              iOS Documentation
-            </motion.h1>
-
-            <motion.h1
-              className={`text-3xl md:text-4xl font-bold gradient-heading mb-6 text-center ${!showBotDocs ? 'hidden' : ''}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: showBotDocs ? 1 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              Modding Bot Documentation
-            </motion.h1>
-
             <motion.div
-              className={`flex flex-wrap justify-center gap-8 ${showAndroidDocs || showIosDocs || showBotDocs ? 'hidden' : ''}`}
-              variants={container}
-              initial="hidden"
-              animate={isLoaded ? "show" : "hidden"}
+              className="max-w-3xl mx-auto glass p-6 md:p-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
             >
-              <motion.div
-                className="download-card group relative"
-                variants={item}
-                onClick={handleAndroidClick}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="relative z-10 flex flex-col items-center">
-                  <Image
-                    src="/GodkuWebsite/images/android-icon.png"
-                    alt="Android"
-                    width={80}
-                    height={80}
-                    className="mb-6 transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <span className="text-2xl font-bold bg-gradient-to-r from-white to-dbz-orange text-transparent bg-clip-text">Android</span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-dbz-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
-              </motion.div>
-
-              <motion.div
-                className="download-card group relative"
-                variants={item}
-                onClick={handleIosClick}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="relative z-10 flex flex-col items-center">
-                  <Image
-                    src="/GodkuWebsite/images/ios-icon.png"
-                    alt="iOS"
-                    width={80}
-                    height={80}
-                    className="mb-6 transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <span className="text-2xl font-bold bg-gradient-to-r from-white to-dbz-blue text-transparent bg-clip-text">iOS</span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-dbz-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
-              </motion.div>
-
-              <motion.div
-                className="download-card group relative"
-                variants={item}
-                onClick={handleBotClick}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="relative z-10 flex flex-col items-center">
-                  <Image
-                    src="/GodkuWebsite/images/discord-icon.png"
-                    alt="Discord Bot"
-                    width={80}
-                    height={80}
-                    className="mb-6 transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <span className="text-2xl font-bold bg-gradient-to-r from-white to-dbz-yellow text-transparent bg-clip-text">Modding Bot</span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-dbz-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
-              </motion.div>
+              <div className="space-y-8">
+                {policySections.map((section) => (
+                  <section key={section.title}>
+                    <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white to-dbz-yellow bg-clip-text text-transparent">
+                      {section.title}
+                    </h2>
+                    {section.content.split("\n\n").map((paragraph) => (
+                      <p key={paragraph} className="text-white/70 leading-relaxed mb-3 last:mb-0">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </section>
+                ))}
+              </div>
             </motion.div>
-
-            {/* Android Documentation Content */}
-            {showAndroidDocs && (
-              <motion.div
-                className="max-w-3xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="glass p-8 mb-10">
-                  <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-dbz-orange bg-clip-text text-transparent">Installation Guide</h2>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Step 1: Download the APK</h3>
-                      <p className="text-white/70">
-                        Go to the download section and select the appropriate version for your device.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Step 2: Install the APK</h3>
-                      <p className="text-white/70">
-                        Enable "Unknown Sources" in your device settings and install the downloaded APK.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Step 3: Configure the Mod</h3>
-                      <p className="text-white/70">
-                        Open the app and follow the on-screen instructions to configure the mod options.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="glass p-8 mb-10">
-                  <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-dbz-orange bg-clip-text text-transparent">Troubleshooting</h2>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Installation Issues</h3>
-                      <p className="text-white/70">
-                        If you can't install the APK, ensure you have enabled "Unknown Sources" in your settings. Some devices may require additional permissions.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">App Crashes</h3>
-                      <p className="text-white/70">
-                        If the app crashes, try restarting your device. Make sure you have sufficient storage space available.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Performance Issues</h3>
-                      <p className="text-white/70">
-                        For optimal performance, close other apps running in the background. Try using the "Essential" version if you have an older device.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <button
-                  className="flex items-center gap-2 text-white/80 hover:text-white mx-auto transition-colors"
-                  style={{ pointerEvents: 'auto', position: 'relative', zIndex: 10 }}
-                  onClick={goBack}
-                >
-                  <ChevronLeft size={18} />
-                  <span>Go Back</span>
-                </button>
-              </motion.div>
-            )}
-
-            {/* iOS Documentation Content */}
-            {showIosDocs && (
-              <motion.div
-                className="max-w-3xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="glass p-8 mb-10">
-                  <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-dbz-blue bg-clip-text text-transparent">iOS Installation Guide</h2>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Step 1: Prepare Your Device</h3>
-                      <p className="text-white/70">
-                        Ensure your device is running iOS 12 or later. Some features may require a newer iOS version.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Step 2: Download and Install</h3>
-                      <p className="text-white/70">
-                        Follow the download link and install using the provided instructions. You may need to confirm installation through device settings.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Step 3: Trust the Developer</h3>
-                      <p className="text-white/70">
-                        Go to Settings {'->'} General {'->'} Device Management, and trust the developer certificate.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="glass p-8 mb-10">
-                  <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-dbz-blue bg-clip-text text-transparent">Frequently Asked Questions</h2>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">How do I update the mod?</h3>
-                      <p className="text-white/70">
-                        Download the latest version from our website and install it over the existing app. Your settings will be preserved.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Is this mod safe for my device?</h3>
-                      <p className="text-white/70">
-                        Yes, our mods are developed with safety in mind and don't include any harmful code. They're regularly tested and updated.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Can I get banned for using this mod?</h3>
-                      <p className="text-white/70">
-                        We recommend using these mods for offline gameplay or on private servers. Online use is at your own risk.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <button
-                  className="flex items-center gap-2 text-white/80 hover:text-white mx-auto transition-colors"
-                  style={{ pointerEvents: 'auto', position: 'relative', zIndex: 10 }}
-                  onClick={goBack}
-                >
-                  <ChevronLeft size={18} />
-                  <span>Go Back</span>
-                </button>
-              </motion.div>
-            )}
-
-            {/* Modding Bot Documentation Content */}
-            {showBotDocs && (
-              <motion.div
-                className="max-w-3xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="glass p-8 mb-10">
-                  <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-dbz-yellow bg-clip-text text-transparent">Discord Bot Commands</h2>
-
-                  <div className="space-y-6">
-                    <div className="glass-card p-4">
-                      <h3 className="text-xl font-semibold mb-2 text-white">!help</h3>
-                      <p className="text-white/70">
-                        Displays a list of all available commands and their descriptions.
-                      </p>
-                    </div>
-
-                    <div className="glass-card p-4">
-                      <h3 className="text-xl font-semibold mb-2 text-white">!godly</h3>
-                      <p className="text-white/70">
-                        Max your equipments to Godly Level. (Usable in PVP !)
-                      </p>
-                    </div>
-
-                    <div className="glass-card p-4">
-                      <h3 className="text-xl font-semibold mb-2 text-white">!ultimate</h3>
-                      <p className="text-white/70">
-                        Max your characters stars, zenkai, soulboost and artboost ! (Not usable in PVP)
-                      </p>
-                    </div>
-
-                    <div className="glass-card p-4">
-                      <h3 className="text-xl font-semibold mb-2 text-white">!skip_tuto</h3>
-                      <p className="text-white/70">
-                        Complete the tutorial on your account instantly.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="glass p-8 mb-10">
-                  <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-dbz-yellow bg-clip-text text-transparent">How to Join</h2>
-
-                  <div className="space-y-6">
-                    <p className="text-white/70">
-                      Join our Discord server to access the modding bot and community support:
-                    </p>
-
-                    <a
-                      href="https://www.discord.gg/godkuproject"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-dbz-blue/20 hover:bg-dbz-blue/30 transition-all duration-300 p-4 rounded-lg flex items-center justify-center gap-3 border border-white/10 hover:border-white/20"
-                    >
-                      <Image src="/GodkuWebsite/images/discord-icon.png" alt="Discord" width={24} height={24} />
-                      <span className="text-white font-semibold">Join Discord Server</span>
-                    </a>
-                  </div>
-                </div>
-
-                <button
-                  className="flex items-center gap-2 text-white/80 hover:text-white mx-auto transition-colors"
-                  style={{ pointerEvents: 'auto', position: 'relative', zIndex: 10 }}
-                  onClick={goBack}
-                >
-                  <ChevronLeft size={18} />
-                  <span>Go Back</span>
-                </button>
-              </motion.div>
-            )}
           </div>
         </section>
 
-        {/* Footer */}
         <footer className="py-10 bg-dark-dark mt-20">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-center">
@@ -431,15 +144,15 @@ export default function DocumentationPage() {
               </div>
 
               <div className="flex flex-wrap justify-center gap-4 mb-6 md:mb-0">
-                <a href="/" className="text-white/70 hover:text-white transition-colors">
+                <Link href="/" className="text-white/70 hover:text-white transition-colors">
                   Home
-                </a>
-                <a href="/download" className="text-white/70 hover:text-white transition-colors">
+                </Link>
+                <Link href="/download" className="text-white/70 hover:text-white transition-colors">
                   Download
-                </a>
-                <a href="/documentation" className="text-white/70 hover:text-white transition-colors">
-                  Documentation
-                </a>
+                </Link>
+                <Link href="/documentation" className="text-white/70 hover:text-white transition-colors">
+                  Godku Policy
+                </Link>
               </div>
 
               <div className="flex items-center space-x-4">

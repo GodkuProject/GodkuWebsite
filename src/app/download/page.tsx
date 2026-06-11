@@ -428,7 +428,7 @@ export default function DownloadPage() {
                   Download
                 </a>
                 <a href="/documentation" className="text-white/70 hover:text-white transition-colors">
-                  Documentation
+                  Godku Policy
                 </a>
               </div>
 

@@ -66,7 +66,7 @@ export function Header() {
               Download
             </Link>
             <Link href="/documentation" className="text-white/80 hover:text-white transition-colors">
-              Documentation
+              Godku Policy
             </Link>
           </nav>
         </div>
@@ -163,7 +163,7 @@ export function Header() {
                   href="/documentation"
                   className="p-3 rounded-lg hover:bg-dark-light transition-colors flex items-center"
                 >
-                  <span>Documentation</span>
+                  <span>Godku Policy</span>
                 </Link>
 
                 <div className="h-px bg-white/10 my-2"></div>

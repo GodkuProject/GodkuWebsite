@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronRight, DownloadCloud, Settings, Zap, Shield, Users } from "lucide-react";
+import { DownloadCloud, Settings, Zap, Shield, Users } from "lucide-react";
 
 import { Header } from "@/components/Header";
 import {
@@ -164,12 +164,6 @@ export default function Home() {
                     <button className="button-primary flex items-center gap-2 w-full sm:w-auto justify-center">
                       <DownloadCloud size={20} />
                       <span>Download Now</span>
-                    </button>
-                  </Link>
-                  <Link href="/documentation">
-                    <button className="button-secondary flex items-center gap-2 w-full sm:w-auto justify-center" style={{ pointerEvents: 'auto', position: 'relative', zIndex: 10 }}>
-                      <span>View Documentation</span>
-                      <ChevronRight size={18} />
                     </button>
                   </Link>
                 </div>
@@ -409,7 +403,7 @@ export default function Home() {
                   Download
                 </Link>
                 <Link href="/documentation" className="text-white/70 hover:text-white transition-colors">
-                  Documentation
+                  Godku Policy
                 </Link>
               </div>
 
