@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { ChevronLeft } from "lucide-react";
 
 const policySections = [
   {
@@ -46,6 +47,7 @@ const policySections = [
 
 export default function DocumentationPage() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showGodkuPolicy, setShowGodkuPolicy] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -87,45 +89,85 @@ export default function DocumentationPage() {
               animate={isLoaded ? "visible" : "hidden"}
               variants={fadeInUp}
             >
-              <a
-                href="https://www.discord.gg/godkuproject"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-dbz-blue/20 hover:bg-dbz-blue/30 transition-all duration-300 px-5 py-3 rounded-lg border border-white/10 hover:border-white/20 mb-8"
-              >
-                <Image src="/GodkuWebsite/images/discord-icon.png" alt="Discord" width={24} height={24} />
-                <span className="text-white font-semibold">Godku Policy</span>
-              </a>
-
               <h1 className="text-3xl md:text-4xl font-bold gradient-heading mb-6">
-                Godku Privacy Policy
+                {showGodkuPolicy ? "Godku Privacy Policy" : "Godku Policies"}
               </h1>
-              <p className="text-white/70 text-lg">
-                Godku processes only the information needed to provide its Discord bot features.
-              </p>
+              {showGodkuPolicy ? (
+                <p className="text-white/70 text-lg">
+                  Godku processes only the information needed to provide its Discord bot features.
+                </p>
+              ) : (
+                <p className="text-white/70 text-lg">
+                  Choose a policy below to view details about Godku Project.
+                </p>
+              )}
             </motion.div>
 
-            <motion.div
-              className="max-w-3xl mx-auto glass p-6 md:p-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-            >
-              <div className="space-y-8">
-                {policySections.map((section) => (
-                  <section key={section.title}>
-                    <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white to-dbz-yellow bg-clip-text text-transparent">
-                      {section.title}
-                    </h2>
-                    {section.content.split("\n\n").map((paragraph) => (
-                      <p key={paragraph} className="text-white/70 leading-relaxed mb-3 last:mb-0">
-                        {paragraph}
-                      </p>
+            {!showGodkuPolicy && (
+              <motion.div
+                className="flex flex-wrap justify-center gap-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+              >
+                <motion.button
+                  type="button"
+                  className="download-card group relative cursor-pointer"
+                  onClick={() => setShowGodkuPolicy(true)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="relative z-10 flex flex-col items-center">
+                    <Image
+                      src="/GodkuWebsite/images/discord-icon.png"
+                      alt="Discord"
+                      width={80}
+                      height={80}
+                      className="mb-6 transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <span className="text-2xl font-bold bg-gradient-to-r from-white to-dbz-yellow text-transparent bg-clip-text">
+                      Godku Policy
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-dbz-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                </motion.button>
+              </motion.div>
+            )}
+
+            {showGodkuPolicy && (
+              <motion.div
+                className="max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="glass p-6 md:p-8 mb-10">
+                  <div className="space-y-8">
+                    {policySections.map((section) => (
+                      <section key={section.title}>
+                        <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white to-dbz-yellow bg-clip-text text-transparent">
+                          {section.title}
+                        </h2>
+                        {section.content.split("\n\n").map((paragraph) => (
+                          <p key={paragraph} className="text-white/70 leading-relaxed mb-3 last:mb-0">
+                            {paragraph}
+                          </p>
+                        ))}
+                      </section>
                     ))}
-                  </section>
-                ))}
-              </div>
-            </motion.div>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  className="flex items-center gap-2 text-white/80 hover:text-white mx-auto transition-colors"
+                  onClick={() => setShowGodkuPolicy(false)}
+                >
+                  <ChevronLeft size={18} />
+                  <span>Go Back</span>
+                </button>
+              </motion.div>
+            )}
           </div>
         </section>
 
