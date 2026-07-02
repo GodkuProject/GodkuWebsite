@@ -183,7 +183,7 @@ export default function ModMenuPage() {
               transition={{ duration: 0.6 }}
               className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full pointer-events-none"
             >
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-radial from-dbz-blue/20 to-transparent opacity-50 blur-xl" />
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-radial from-dbz-blue/20 to-transparent opacity-50 blur-xl pointer-events-none" />
             </motion.div>
 
             <motion.div
