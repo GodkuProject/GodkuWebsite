@@ -7,6 +7,10 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft } from "lucide-react";
 
+const goBack = () => {
+  window.history.back();
+};
+
 const policySections = [
   {
     title: "Data Used",
