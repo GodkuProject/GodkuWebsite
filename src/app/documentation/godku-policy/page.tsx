@@ -119,13 +119,14 @@ export default function GodkuPolicyPage() {
                 </div>
               </div>
 
-              <Link
-                href="/documentation">
-                className="flex items-center gap-2 text-white/80 hover:text-white mx-auto transition-colors w-fit"
-               >
-             <ChevronLeft size={18} />
-               <span>Go Back</span>
-              </Link>
+              <button
+                  className="flex items-center gap-2 text-white/80 hover:text-white mt-6 mx-auto transition-colors"
+                  style={{ pointerEvents: 'auto', position: 'relative', zIndex: 10 }}
+                  onClick={goBack}
+                >
+                  <ChevronLeft size={18} />
+                  <span>Go Back</span>
+                </button>
             </motion.div>
           </div>
         </section>
