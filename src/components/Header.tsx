@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Menu, X, Youtube, Download, Menu as MenuIcon } from 'lucide-react';
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import { Youtube, Download, Menu as MenuIcon } from "lucide-react";
 
 import {
   Sheet,
@@ -24,70 +25,93 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+const NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/download", label: "Download" },
+  { href: "/mod-menu", label: "Mod Menu" },
+  { href: "/farmbot", label: "Farmbot" },
+  { href: "/documentation", label: "Godku Policy" },
+];
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-dark-main/90 backdrop-blur-md shadow-md' : 'py-5 bg-transparent'}`}>
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled
+          ? "py-3 bg-dark-main/80 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_10px_40px_rgba(0,0,0,0.35)]"
+          : "py-6 bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo and Desktop Navigation */}
-        <div className="flex items-center space-x-8">
-          <Link href="/" className="flex items-center space-x-3">
-            <Image
-              src="/GodkuWebsite/images/logo.png"
-              alt="Godku Logo"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
-            <span className="text-2xl font-bold bg-gradient-to-r from-white to-dbz-orange text-transparent bg-clip-text">
+        <div className="flex items-center space-x-10">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-dbz-orange/40 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <Image
+                src="/GodkuWebsite/images/logo.png"
+                alt="Godku Logo"
+                width={38}
+                height={38}
+                className="rounded-full relative ring-1 ring-white/10"
+              />
+            </div>
+            <span className="font-display text-xl font-bold bg-gradient-to-r from-white to-dbz-orange text-transparent bg-clip-text tracking-tight">
               Godku Project
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-white/80 hover:text-white transition-colors">
-              Home
-            </Link>
-            <Link href="/download" className="text-white/80 hover:text-white transition-colors">
-              Download
-            </Link>
-            <Link href="/documentation" className="text-white/80 hover:text-white transition-colors">
-              Godku Policy
-            </Link>
+          <nav className="hidden md:flex items-center space-x-1">
+            {NAV_LINKS.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`relative px-3 py-2 text-sm font-medium transition-colors rounded-lg ${
+                    active ? "text-white" : "text-white/60 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                  {active && (
+                    <motion.span
+                      layoutId="nav-active"
+                      className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full bg-gradient-to-r from-dbz-orange to-dbz-yellow"
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
         </div>
 
-        {/* Desktop Action Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-3">
           <Link
             href="https://ko-fi.com/darklaser38"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-dbz-orange hover:bg-dbz-orangeLight text-white px-4 py-2 rounded-lg transition-all hover:shadow-[0_0_15px_rgba(255,89,0,0.5)] hover:-translate-y-0.5"
+            className="bg-dbz-orange/90 hover:bg-dbz-orange text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all hover:shadow-glow-orange hover:-translate-y-0.5 border border-white/10"
           >
             Donate
           </Link>
 
           <DropdownMenu>
-            <DropdownMenuTrigger className="bg-dark-light hover:bg-dbz-blue/20 text-white px-4 py-2 rounded-lg transition-all">
+            <DropdownMenuTrigger className="bg-white/[0.04] hover:bg-dbz-blue/20 border border-white/10 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all">
               Community
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-dark-light border border-white/10 text-white">
-              <DropdownMenuLabel>Join Us</DropdownMenuLabel>
+            <DropdownMenuContent className="bg-dark-light/95 backdrop-blur-xl border border-white/10 text-white">
+              <DropdownMenuLabel className="text-white/50 text-xs uppercase tracking-widest">Join Us</DropdownMenuLabel>
               <DropdownMenuSeparator className="bg-white/10" />
               <DropdownMenuItem className="hover:bg-dbz-blue/20 cursor-pointer">
                 <a
@@ -128,83 +152,73 @@ export function Header() {
           </DropdownMenu>
         </div>
 
-        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <button className="text-white p-2 rounded-lg bg-dark-light hover:bg-dbz-blue/20 transition-colors mr-1">
-                <MenuIcon size={24} />
+              <button className="text-white p-2 rounded-lg bg-white/[0.04] border border-white/10 hover:bg-dbz-blue/20 transition-colors mr-1">
+                <MenuIcon size={22} />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-dark-main border-l border-white/10 text-white">
+            <SheetContent side="right" className="bg-dark-main/98 backdrop-blur-xl border-l border-white/10 text-white">
               <SheetHeader>
-                <SheetTitle className="text-left text-2xl bg-gradient-to-r from-white to-dbz-orange text-transparent bg-clip-text">
+                <SheetTitle className="text-left font-display text-2xl bg-gradient-to-r from-white to-dbz-orange text-transparent bg-clip-text">
                   Godku Project
                 </SheetTitle>
-                <SheetDescription className="text-left text-white/60">
+                <SheetDescription className="text-left text-white/50">
                   The Greatest Dragon Ball Legends Mod
                 </SheetDescription>
               </SheetHeader>
-              <div className="mt-8 flex flex-col space-y-4">
-                <Link
-                  href="/"
-                  className="p-3 rounded-lg hover:bg-dark-light transition-colors flex items-center"
-                >
-                  <span>Home</span>
-                </Link>
-                <Link
-                  href="/download"
-                  className="p-3 rounded-lg hover:bg-dark-light transition-colors flex items-center"
-                >
-                  <Download size={18} className="mr-3" />
-                  <span>Download</span>
-                </Link>
-                <Link
-                  href="/documentation"
-                  className="p-3 rounded-lg hover:bg-dark-light transition-colors flex items-center"
-                >
-                  <span>Godku Policy</span>
-                </Link>
+              <div className="mt-8 flex flex-col space-y-2">
+                {NAV_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="p-3 rounded-lg hover:bg-white/[0.06] transition-colors flex items-center text-white/85"
+                  >
+                    {link.href === "/download" && <Download size={18} className="mr-3" />}
+                    <span>{link.label}</span>
+                  </Link>
+                ))}
 
-                <div className="h-px bg-white/10 my-2"></div>
+                <div className="h-px bg-white/10 my-2" />
 
                 <a
                   href="https://ko-fi.com/darklaser38"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg bg-dbz-orange hover:bg-dbz-orangeLight transition-colors flex justify-center"
+                  className="p-3 rounded-lg bg-dbz-orange hover:bg-dbz-orangeLight transition-colors flex justify-center font-semibold"
                 >
                   Donate
                 </a>
 
-                <div className="h-px bg-white/10 my-2"></div>
+                <div className="h-px bg-white/10 my-2" />
 
-                <h3 className="text-sm font-semibold text-white/60 uppercase tracking-wider">Join Our Community</h3>
+                <h3 className="text-xs font-semibold text-white/40 uppercase tracking-[0.2em] px-1">Join Our Community</h3>
 
                 <div className="flex justify-between space-x-3 mt-2">
                   <a
                     href="https://www.discord.gg/godkuproject"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 p-3 rounded-lg bg-dark-light hover:bg-dbz-blue/20 flex justify-center items-center transition-colors"
+                    className="flex-1 p-3 rounded-lg bg-white/[0.04] border border-white/10 hover:bg-dbz-blue/20 flex justify-center items-center transition-colors"
                   >
-                    <Image src="/GodkuWebsite/images/discord-icon.png" alt="Discord" width={24} height={24} />
+                    <Image src="/GodkuWebsite/images/discord-icon.png" alt="Discord" width={22} height={22} />
                   </a>
                   <a
                     href="https://www.youtube.com/@GodkuProject"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 p-3 rounded-lg bg-dark-light hover:bg-dbz-blue/20 flex justify-center items-center transition-colors"
+                    className="flex-1 p-3 rounded-lg bg-white/[0.04] border border-white/10 hover:bg-dbz-blue/20 flex justify-center items-center transition-colors"
                   >
-                    <Youtube size={24} />
+                    <Youtube size={22} />
                   </a>
                   <a
                     href="https://www.tiktok.com/@godkuprojectreborn"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 p-3 rounded-lg bg-dark-light hover:bg-dbz-blue/20 flex justify-center items-center transition-colors"
+                    className="flex-1 p-3 rounded-lg bg-white/[0.04] border border-white/10 hover:bg-dbz-blue/20 flex justify-center items-center transition-colors"
                   >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" fill="currentColor" />
                     </svg>
                   </a>
