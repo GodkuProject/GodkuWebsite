@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Godku Project",
   description: "A powerful mod menu, an automated farmbot, and a smoother Dragon Ball Legends experience, built and maintained by a real community.",
   icons: {
-    icon: "/GodkuWebsite/images/logo.png",
+    icon: "/images/logo.png",
   },
 };
 
