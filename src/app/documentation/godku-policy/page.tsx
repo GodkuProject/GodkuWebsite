@@ -69,7 +69,7 @@ export default function GodkuPolicyPage() {
       <Header />
 
       <main className="pt-20 relative">
-        <div className="grid-pattern absolute inset-0 w-full h-full pointer-events-none" />
+        <motion.div className="text-center mb-12 max-w-3xl mx-auto relative z-10" />
 
         <section className="relative py-24 overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
