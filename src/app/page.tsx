@@ -371,7 +371,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Link href="/GodkuWebsite/farmbot/">
+              <Link href="/farmbot">
                 <button className="button-secondary inline-flex items-center gap-2">
                   <span>See Full Farmbot Details</span>
                   <ArrowRight size={18} />
