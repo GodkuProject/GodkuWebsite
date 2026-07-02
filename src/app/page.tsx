@@ -209,7 +209,7 @@ export default function Home() {
                   <div className="aura-ring" />
                   <div className="absolute inset-0 bg-gradient-radial from-dbz-orange/15 to-transparent rounded-full blur-2xl -z-10" />
                   <Image
-                    src="/images/characters/goku-ultra-instinct.jpg"
+                    src="/GodkuWebsite/images/characters/goku-ultra-instinct.jpg"
                     alt="Dragon Ball Character"
                     fill
                     className="object-contain animate-float drop-shadow-[0_25px_45px_rgba(168,85,247,0.35)]"
@@ -448,7 +448,7 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
               >
                 <Image
-                  src="/images/characters/goku.jpg"
+                  src="/GodkuWebsite/images/characters/goku.jpg"
                   alt="Goku"
                   width={130}
                   height={130}
