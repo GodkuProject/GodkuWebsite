@@ -205,7 +205,7 @@ export default function DownloadPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               New to the Farmbot? Check out the{" "}
-              <a href="http://localhost:3000/GodkuWebsite/farmbot" className="text-dbz-yellow hover:text-dbz-orange underline underline-offset-4 transition-colors">
+              <a href="/GodkuWebsite/farmbot" className="text-dbz-yellow hover:text-dbz-orange underline underline-offset-4 transition-colors">
                 full Farmbot details
               </a>{" "}
               before you join.
@@ -458,7 +458,7 @@ export default function DownloadPage() {
                 <a href="/mod-menu" className="text-white/70 hover:text-white transition-colors">
                   Mod Menu
                 </a>
-                <a href="http://localhost:3000/GodkuWebsite/farmbot" className="text-white/70 hover:text-white transition-colors">
+                <a href="/GodkuWebsite/farmbot" className="text-white/70 hover:text-white transition-colors">
                   Farmbot
                 </a>
                 <a href="/documentation" className="text-white/70 hover:text-white transition-colors">
