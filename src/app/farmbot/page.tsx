@@ -324,7 +324,7 @@ export default function FarmbotPage() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex items-center mb-6 md:mb-0">
                 <Image
-                  src="/GodkuWebsite/images/logo.png"
+                  src="/images/logo.png"
                   alt="Godku Logo"
                   width={30}
                   height={30}
