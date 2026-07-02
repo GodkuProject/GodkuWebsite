@@ -448,7 +448,7 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
               >
                 <Image
-                  src="/public/images/characters/goku.jpg"
+                  src="/images/characters/goku.jpg"
                   alt="Goku"
                   width={130}
                   height={130}
