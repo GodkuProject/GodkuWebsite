@@ -7,10 +7,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft } from "lucide-react";
 
-const goBack = () => {
-  window.history.back();
-};
-
 const policySections = [
   {
     title: "Data Used",
@@ -123,14 +119,13 @@ export default function GodkuPolicyPage() {
                 </div>
               </div>
 
-              <button
-                  className="flex items-center gap-2 text-white/80 hover:text-white mt-6 mx-auto transition-colors"
-                  style={{ pointerEvents: 'auto', position: 'relative', zIndex: 10 }}
-                  onClick={goBack}
-                >
-                  <ChevronLeft size={18} />
-                  <span>Go Back</span>
-                </button>
+              <Link
+               href="/download"
+               className="flex items-center gap-2 text-white/80 hover:text-white mt-6 mx-auto transition-colors w-fit relative z-10"
+               >
+               <ChevronLeft size={18} />
+               <span>Go Back</span>
+              </Link>
             </motion.div>
           </div>
         </section>
