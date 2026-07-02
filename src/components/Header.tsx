@@ -60,7 +60,7 @@ export function Header() {
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-dbz-orange/40 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <Image
-                src="/GodkuWebsite/images/logo.png"
+                src="/images/logo.png"
                 alt="Godku Logo"
                 width={38}
                 height={38}
