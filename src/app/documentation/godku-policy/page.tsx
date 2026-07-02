@@ -121,7 +121,13 @@ export default function GodkuPolicyPage() {
                 </div>
               </div>
 
-              <Link href={`${BASE}/documentation`} className="flex items-center gap-2 text-white/80 hover:text-white mx-auto transition-colors w-fit">
+              <Link
+                href={`${BASE}/documentation`}
+                className="flex items-center gap-2 text-white/80 hover:text-white mx-auto transition-colors w-fit"
+               >
+             <ChevronLeft size={18} />
+               <span>Go Back</span>
+              </Link>
             </motion.div>
           </div>
         </section>
