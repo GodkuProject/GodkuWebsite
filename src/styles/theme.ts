@@ -1,46 +1,42 @@
 export const theme = {
   colors: {
     primary: {
-      // Dragon Ball Orange
-      main: '#FF5900',
-      light: '#FF7C33',
-      dark: '#D94C00',
+      main: '#E35A2B',
+      light: '#F0895A',
+      dark: '#A83E17',
     },
     secondary: {
-      // Goku Blue
-      main: '#2D5BFF',
-      light: '#5E80FF',
-      dark: '#0039D9',
+      main: '#5B72D6',
+      light: '#8493E3',
+      dark: '#3B4AA0',
     },
     accent: {
-      // Energy Yellow
-      main: '#FFDE00',
-      light: '#FFEA4D',
-      dark: '#D9BC00',
+      main: '#D9A441',
+      light: '#E8C273',
+      dark: '#A87D2E',
     },
     background: {
-      // Dark theme
-      main: '#0A0A18',
-      light: '#161630',
-      dark: '#040408',
-      card: 'rgba(22, 22, 48, 0.7)',
-      glass: 'rgba(37, 37, 75, 0.5)',
+      main: '#07070B',
+      light: '#111119',
+      dark: '#030304',
+      card: 'rgba(17, 17, 25, 0.7)',
+      glass: 'rgba(19, 19, 28, 0.5)',
     },
     text: {
-      primary: '#FFFFFF',
-      secondary: '#B0B0C0',
-      accent: '#FF5900',
+      primary: '#F2F1EF',
+      secondary: '#98979F',
+      accent: '#E35A2B',
     }
   },
   shadows: {
     glow: {
-      orange: '0 0 15px rgba(255, 89, 0, 0.7)',
-      blue: '0 0 15px rgba(45, 91, 255, 0.7)',
-      yellow: '0 0 15px rgba(255, 222, 0, 0.7)',
+      orange: '0 0 15px rgba(227, 90, 43, 0.6)',
+      blue: '0 0 15px rgba(91, 114, 214, 0.6)',
+      yellow: '0 0 15px rgba(217, 164, 65, 0.6)',
     }
   },
   fonts: {
-    heading: '"Poppins", sans-serif',
+    heading: '"Sora", sans-serif',
     body: '"Poppins", sans-serif',
   },
   borderRadius: {
