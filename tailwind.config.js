@@ -19,20 +19,20 @@ module.exports = {
     extend: {
       colors: {
         dbz: {
-          orange: "#FF5900",
-          orangeLight: "#FF7C33",
-          orangeDark: "#D94C00",
-          blue: "#2D5BFF",
-          blueLight: "#5E80FF",
-          blueDark: "#0039D9",
-          yellow: "#FFDE00",
-          yellowLight: "#FFEA4D",
-          yellowDark: "#D9BC00",
+          orange: "#A78BFA",
+          orangeLight: "#E5DBFF",
+          orangeDark: "#6D28D9",
+          blue: "#7DD3FC",
+          blueLight: "#BAE6FD",
+          blueDark: "#38BDF8",
+          yellow: "#F5F3FF",
+          yellowLight: "#FFFFFF",
+          yellowDark: "#D8CCFF",
         },
         dark: {
-          main: "#0A0A18",
-          light: "#161630",
-          dark: "#040408",
+          main: "#0a0612",
+          light: "#160e22",
+          dark: "#08050c",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -87,8 +87,8 @@ module.exports = {
           '50%': { transform: 'translateY(-10px)' },
         },
         glow: {
-          '0%, 100%': { boxShadow: '0 0 5px rgba(255, 89, 0, 0.5)' },
-          '50%': { boxShadow: '0 0 20px rgba(255, 89, 0, 0.8)' },
+          '0%, 100%': { boxShadow: '0 0 5px rgba(147, 197, 253, 0.5)' },
+          '50%': { boxShadow: '0 0 20px rgba(196, 181, 253, 0.8)' },
         },
         shine: {
           '0%': { backgroundPosition: '200% center' },
@@ -106,6 +106,14 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'hero-pattern': 'url("/images/ui/aura-effect.png")',
         'grid-pattern': 'linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px)',
+      },
+      fontFamily: {
+        display: ['var(--font-display)', 'sans-serif'],
+        body: ['var(--font-poppins)', 'sans-serif'],
+      },
+      boxShadow: {
+        'glow-orange': '0 0 40px -8px rgba(167, 139, 250, 0.55)',
+        'glow-blue': '0 0 40px -8px rgba(125, 211, 252, 0.55)',
       }
     },
   },
