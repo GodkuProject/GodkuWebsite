@@ -120,7 +120,7 @@ export default function GodkuPolicyPage() {
               </div>
 
               <Link
-                href="/documentation"
+                href="/GodkuWebsite/documentation"
                 className="flex items-center gap-2 text-white/80 hover:text-white mx-auto transition-colors w-fit"
               >
                 <ChevronLeft size={18} />
