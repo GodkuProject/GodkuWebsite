@@ -11,7 +11,7 @@ export default function NotFound() {
         <div className="grid-pattern absolute inset-0 w-full h-full pointer-events-none" />
         <div className="flex flex-col items-center justify-center min-h-[80vh] text-center relative z-10">
           <Image
-            src="/images/logo.png"
+            src="/GodkuWebsite/images/logo.png"
             alt="Godku Logo"
             width={64}
             height={64}
