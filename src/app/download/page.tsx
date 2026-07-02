@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { DownloadIcon, ChevronLeft, Shield, Smartphone, Zap } from "lucide-react";
+import { DownloadIcon, ChevronLeft, Shield, Smartphone, Zap, Bot } from "lucide-react";
 
 export default function DownloadPage() {
   const [showAndroidButtons, setShowAndroidButtons] = useState(false);
@@ -85,7 +85,6 @@ export default function DownloadPage() {
       <Header />
 
       <main className="pt-20 relative">
-        {/* Grid Pattern Background */}
         <div className="grid-pattern absolute inset-0 w-full h-full pointer-events-none" />
 
         <section className="relative py-24 overflow-hidden">
@@ -94,7 +93,7 @@ export default function DownloadPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full"
+              className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full pointer-events-none"
             >
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-radial from-dbz-blue/20 to-transparent opacity-50 blur-xl" />
             </motion.div>
@@ -105,11 +104,13 @@ export default function DownloadPage() {
               animate={isLoaded ? "visible" : "hidden"}
               variants={fadeInUp}
             >
-              <h1 className={`text-3xl md:text-4xl font-bold gradient-heading mb-6 ${showAndroidButtons || showIosButtons ? 'hidden' : ''}`}>
+              <p className={`section-label mb-3 ${showAndroidButtons || showIosButtons ? 'hidden' : ''}`}>Get The Mod</p>
+              <h1 className={`text-3xl md:text-4xl font-display font-bold gradient-heading mb-6 ${showAndroidButtons || showIosButtons ? 'hidden' : ''}`}>
                 Download Godku Project
               </h1>
-              <p className={`text-white/70 text-lg mb-8 ${showAndroidButtons || showIosButtons ? 'hidden' : ''}`}>
-                Choose your operating system to download the Godku Project mod and experience Dragon Ball Legends like never before.
+              <p className={`text-white/60 text-lg mb-8 ${showAndroidButtons || showIosButtons ? 'hidden' : ''}`}>
+                Choose your operating system to download the Godku Project mod menu, or grab the Farmbot to
+                automate your farming.
               </p>
             </motion.div>
 
@@ -176,9 +177,40 @@ export default function DownloadPage() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-br from-dbz-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
               </motion.div>
+
+              <motion.a
+                href="https://discord.com/channels/1246530075885568050/1411385595548401755"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="download-card group relative"
+                variants={item}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="relative z-10 flex flex-col items-center">
+                  <div className="mb-6 w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br from-dbz-yellow/20 to-transparent transition-transform duration-300 group-hover:scale-110">
+                    <Bot className="w-10 h-10 text-dbz-yellow" />
+                  </div>
+                  <span className="text-2xl font-bold bg-gradient-to-r from-white to-dbz-yellow text-transparent bg-clip-text">Farmbot</span>
+                  <span className="text-white/40 text-xs mt-2">Opens in Discord</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-dbz-yellow/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+              </motion.a>
             </motion.div>
 
-            {/* Android Download Options */}
+            <motion.p
+              className={`text-center text-white/50 text-sm mt-8 ${showAndroidButtons || showIosButtons ? 'hidden' : ''}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isLoaded ? 1 : 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              New to the Farmbot? Check out the{" "}
+              <a href="http://localhost:3000/GodkuWebsite/farmbot" className="text-dbz-yellow hover:text-dbz-orange underline underline-offset-4 transition-colors">
+                full Farmbot details
+              </a>{" "}
+              before you join.
+            </motion.p>
+
             <motion.div
               className={`max-w-xl mx-auto ${!showAndroidButtons ? 'hidden' : ''}`}
               initial={{ opacity: 0, y: 20 }}
@@ -233,7 +265,6 @@ export default function DownloadPage() {
               </div>
             </motion.div>
 
-            {/* iOS Download Options */}
             <motion.div
               className={`max-w-xl mx-auto ${!showIosButtons ? 'hidden' : ''}`}
               initial={{ opacity: 0, y: 20 }}
@@ -308,7 +339,6 @@ export default function DownloadPage() {
           </div>
         </section>
 
-        {/* Benefits Section */}
         <section className="py-20 bg-dark-light/20">
           <div className="container mx-auto px-4">
             <motion.div
@@ -318,10 +348,10 @@ export default function DownloadPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold gradient-heading mb-4">
+              <h2 className="text-3xl md:text-4xl font-display font-bold gradient-heading mb-4">
                 Why Choose Godku Project?
               </h2>
-              <p className="text-white/70 max-w-xl mx-auto">
+              <p className="text-white/60 max-w-xl mx-auto">
                 Our mod offers a superior Dragon Ball Legends experience with these benefits:
               </p>
             </motion.div>
@@ -339,15 +369,14 @@ export default function DownloadPage() {
                   <div className="w-12 h-12 bg-gradient-to-br from-dbz-orange/20 to-transparent rounded-full flex items-center justify-center mx-auto mb-4">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                  <p className="text-white/70 text-sm">{benefit.description}</p>
+                  <h3 className="text-lg font-display font-semibold mb-2">{benefit.title}</h3>
+                  <p className="text-white/55 text-sm">{benefit.description}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Installation Instructions */}
         <section className="py-20">
           <div className="container mx-auto px-4">
             <motion.div
@@ -357,10 +386,10 @@ export default function DownloadPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold gradient-heading mb-4">
+              <h2 className="text-3xl md:text-4xl font-display font-bold gradient-heading mb-4">
                 Installation Instructions
               </h2>
-              <p className="text-white/70 max-w-xl mx-auto">
+              <p className="text-white/60 max-w-xl mx-auto">
                 Follow these simple steps to install the Godku Project mod:
               </p>
             </motion.div>
@@ -377,26 +406,26 @@ export default function DownloadPage() {
                   <div className="space-y-12">
                     <div className="relative">
                       <div className="absolute -left-11 w-8 h-8 bg-dbz-orange/20 rounded-full flex items-center justify-center text-dbz-orange font-bold border border-dbz-orange/30">1</div>
-                      <h3 className="text-xl font-semibold mb-2">Download the APK</h3>
-                      <p className="text-white/70">Choose the appropriate version above and download the APK file to your device.</p>
+                      <h3 className="text-xl font-display font-semibold mb-2">Download the APK</h3>
+                      <p className="text-white/60">Choose the appropriate version above and download the APK file to your device.</p>
                     </div>
 
                     <div className="relative">
                       <div className="absolute -left-11 w-8 h-8 bg-dbz-orange/20 rounded-full flex items-center justify-center text-dbz-orange font-bold border border-dbz-orange/30">2</div>
-                      <h3 className="text-xl font-semibold mb-2">Enable Unknown Sources</h3>
-                      <p className="text-white/70">Go to Settings {'->'} Security {'->'} Enable "Unknown Sources" to allow installation of apps from sources other than the Play Store.</p>
+                      <h3 className="text-xl font-display font-semibold mb-2">Enable Unknown Sources</h3>
+                      <p className="text-white/60">Go to Settings {'->'} Security {'->'} Enable "Unknown Sources" to allow installation of apps from sources other than the Play Store.</p>
                     </div>
 
                     <div className="relative">
                       <div className="absolute -left-11 w-8 h-8 bg-dbz-orange/20 rounded-full flex items-center justify-center text-dbz-orange font-bold border border-dbz-orange/30">3</div>
-                      <h3 className="text-xl font-semibold mb-2">Install the APK</h3>
-                      <p className="text-white/70">Open the downloaded APK file and follow the on-screen instructions to install.</p>
+                      <h3 className="text-xl font-display font-semibold mb-2">Install the APK</h3>
+                      <p className="text-white/60">Open the downloaded APK file and follow the on-screen instructions to install.</p>
                     </div>
 
                     <div className="relative">
                       <div className="absolute -left-11 w-8 h-8 bg-dbz-orange/20 rounded-full flex items-center justify-center text-dbz-orange font-bold border border-dbz-orange/30">4</div>
-                      <h3 className="text-xl font-semibold mb-2">Launch the Mod</h3>
-                      <p className="text-white/70">Open the installed app and enjoy the enhanced Dragon Ball Legends experience!</p>
+                      <h3 className="text-xl font-display font-semibold mb-2">Launch the Mod</h3>
+                      <p className="text-white/60">Open the installed app and enjoy the enhanced Dragon Ball Legends experience!</p>
                     </div>
                   </div>
                 </motion.div>
@@ -405,8 +434,7 @@ export default function DownloadPage() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="py-10 bg-dark-dark">
+        <footer className="py-12 bg-dark-dark border-t border-white/[0.06]">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex items-center mb-6 md:mb-0">
@@ -426,6 +454,12 @@ export default function DownloadPage() {
                 </a>
                 <a href="/download" className="text-white/70 hover:text-white transition-colors">
                   Download
+                </a>
+                <a href="/mod-menu" className="text-white/70 hover:text-white transition-colors">
+                  Mod Menu
+                </a>
+                <a href="http://localhost:3000/GodkuWebsite/farmbot" className="text-white/70 hover:text-white transition-colors">
+                  Farmbot
                 </a>
                 <a href="/documentation" className="text-white/70 hover:text-white transition-colors">
                   Godku Policy
@@ -465,9 +499,8 @@ export default function DownloadPage() {
               </div>
             </div>
 
-            <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/50 text-sm">
-              <p>&copy; {new Date().getFullYear()} Godku Project. Created by Darklaser38. All rights reserved.</p>
-            </div>
+            <div className="divider-fade mt-10 mb-8" />
+            <p className="text-center text-white/40 text-sm">&copy; {new Date().getFullYear()} Godku Project. Created by Darklaser38 and TheOnlyJon (With some help of Rez). All rights reserved.</p>
           </div>
         </footer>
       </main>
