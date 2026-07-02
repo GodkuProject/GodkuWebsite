@@ -87,7 +87,7 @@ export default function DocumentationPage() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex items-center mb-6 md:mb-0">
                 <Image
-                  src="/images/logo.png"
+                  src="/GodkuWebsite/images/logo.png"
                   alt="Godku Logo"
                   width={30}
                   height={30}
