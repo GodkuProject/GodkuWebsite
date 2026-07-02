@@ -1,7 +1,5 @@
 "use client";
 
-const BASE = "/GodkuWebsite";
-
 import { Header } from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
@@ -122,7 +120,7 @@ export default function GodkuPolicyPage() {
               </div>
 
               <Link
-                href={`${BASE}/documentation`}
+                href="/documentation">
                 className="flex items-center gap-2 text-white/80 hover:text-white mx-auto transition-colors w-fit"
                >
              <ChevronLeft size={18} />
