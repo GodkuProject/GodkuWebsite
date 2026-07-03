@@ -36,7 +36,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#0a0612" />
         <meta property="og:title" content="Godku Project" />
         <meta property="og:description" content="The best Dragon Ball Legends mods!" />
-        <meta property="og:image" content="https://i.imgur.com/i5t0JV2.png" />
+        <meta property="og:image" content="https://imgur.com/a/QnSWQMG" />
       </head>
       <body className={`${poppins.variable} ${sora.variable} font-body background`}>
         <SpotlightCursor />
