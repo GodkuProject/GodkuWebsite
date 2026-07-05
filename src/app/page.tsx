@@ -160,7 +160,7 @@ export default function Home() {
               >
                 <div className="eyebrow mb-6">
                   <span className="eyebrow-dot" />
-                  not updated yet
+                  Updated
                 </div>
 
                 <h1 className="hero-title font-display">
