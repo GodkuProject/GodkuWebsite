@@ -343,9 +343,6 @@ export default function FarmbotPage() {
                 <Link href="/mod-menu" className="text-white/60 hover:text-white text-sm transition-colors">
                   Mod Menu
                 </Link>
-                <Link href="/documentation" className="text-white/60 hover:text-white text-sm transition-colors">
-                  Godku Policy
-                </Link>
               </div>
 
               <div className="flex items-center space-x-4">

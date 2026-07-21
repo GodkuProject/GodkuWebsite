@@ -30,7 +30,6 @@ const NAV_LINKS = [
   { href: "/download", label: "Download" },
   { href: "/mod-menu", label: "Mod Menu" },
   { href: "/farmbot", label: "Farmbot" },
-  { href: "/documentation", label: "Godku Policy" },
 ];
 
 export function Header() {

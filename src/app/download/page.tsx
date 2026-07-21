@@ -461,9 +461,6 @@ export default function DownloadPage() {
                 <a href="/GodkuWebsite/farmbot" className="text-white/70 hover:text-white transition-colors">
                   Farmbot
                 </a>
-                <a href="/documentation" className="text-white/70 hover:text-white transition-colors">
-                  Godku Policy
-                </a>
               </div>
 
               <div className="flex items-center space-x-4">

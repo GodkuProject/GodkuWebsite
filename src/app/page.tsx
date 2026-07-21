@@ -521,9 +521,6 @@ export default function Home() {
                 <Link href="/farmbot" className="text-white/60 hover:text-white text-sm transition-colors">
                   Farmbot
                 </Link>
-                <Link href="/documentation" className="text-white/60 hover:text-white text-sm transition-colors">
-                  Godku Policy
-                </Link>
               </div>
 
               <div className="flex items-center space-x-4">
