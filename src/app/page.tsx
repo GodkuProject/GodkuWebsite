@@ -355,7 +355,7 @@ export default function Home() {
                 <div className="aspect-video rounded-2xl overflow-hidden gradient-border shadow-[0_25px_70px_rgba(0,0,0,0.45)]">
                   <iframe
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/i5yqPX1DfLM"
+                    src="https://www.youtube.com/embed/2rVROfuINwA"
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
